@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'p(u*2$okck-0gu$d(cck-2k0-7(%n^t$tgpv$oip6(t)o*48nu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['whattocook-kpi.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
