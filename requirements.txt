@@ -16,7 +16,6 @@ plotly==4.9.0
 python-bidi==0.4.2
 python-dateutil==2.8.1
 pytz==2019.3
-pywin32==228
 pywinpty==0.5.7
 pyzmail==1.0.3
 pyzmq==19.0.2
