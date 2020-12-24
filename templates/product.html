@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/header_footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/recipe_list.css' %}">
+	<title>Product</title>
+</head>
+<body>
+	{% include "menu.html" %}
+	{% include "header.html" %}
+
+	<div class="container"  id="recipe_list">
+		<div class="row">
+			<div class="col-12">
+				<img src="{% static product.0.photo %}" alt="">
+			</div>
+			<h5>{{ product.0.name }}</h5>
+			<br>
+		</div>
+
+			<form action="" method="POST">
+				{% csrf_token %}
+			  <div class="form-group">
+			    <label>Введіть кількість</label>
+			    <input type="number" name="count" min=0 class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleFormControlSelect1">Оберіть одиниці виміру:</label>
+			    <select class="form-control" id="exampleFormControlSelect1" name="measurement">
+			      <option>кг</option>
+			      <option>г</option>
+			      <option>мл</option>
+			      <option>л</option>
+			      <option>шт</option>
+			    </select>
+			  </div>
+			  
+			  <button type="submit">Додати в холодильник</button>
+
+			  <a href="{% url 'find_products' %}"><button type="button">Вернутись до пошуку</button></a>
+			</form>
+			
+	</div>
+
+
+	{% include "bottom_menu.html" %}
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

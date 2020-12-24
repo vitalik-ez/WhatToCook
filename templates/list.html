@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/header_footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/recipe_list.css' %}">
+	<title>Recipe</title>
+</head>
+<body>
+	{% include "menu.html" %}
+	{% include "header.html" %}
+	
+
+	<div class="container" id="recipe_list">
+		<div class="row">
+			{% if result %}
+			<div class="col-12">
+				<h3>Рекомендуємо Вам наступні смачні рецепти</h3>
+			</div>
+			{% for recipe in result %}
+				<div class="row recom">
+					<div class="col-5">
+						<img src="{% static recipe.3 %}" alt="">
+					</div>
+					<div class="col-7 text">
+						<a style="text-decoration: none; color: black;" href="{% url 'recipe_name' pk=recipe.0 %}"><h5>{{ recipe.1 }}</h5></a>
+						<p>{{ recipe.2 }} </p>
+						<p>
+							{% if recipe.5 %}
+								{% for i in recipe.5 %}
+									<img style="width: 30px; height: 30px;" src="{% static 'images/star_g.svg' %}" alt="">
+								{% endfor %}
+								{% else %}
+								Рецепт не має оцінок.
+							{% endif %}
+						</p>
+					</div>
+				</div>
+			{% endfor %}
+			{% else %}
+				<div class="col-12">
+					<h3>Результату по вашому запиту немає</h3>
+				</div>
+			{% endif %}
+			
+		</div>
+	</div>
+
+
+	{% include "bottom_menu.html" %}
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

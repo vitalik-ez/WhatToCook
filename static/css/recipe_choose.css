@@ -1,0 +1,37 @@
+#recipe_choose_body{
+	width: 90%;
+	margin: 10px auto;
+}
+div #choose1{
+	background-image: url('../images/rch1_disable.png');
+	height: 155px;
+	margin: 15px 0;
+}
+div #choose1 a{
+	color: #1E1E1E;
+    text-align: center;
+    width: 80%;
+    left: 10%;
+    font-weight: 500;
+    top: 28%;
+    position: absolute;
+}
+div #choose2{
+	background-image: url('../images/rch2_disable.png');
+	height: 155px;
+	margin: 10px 0;
+}
+div #choose2 a{
+	color: #1E1E1E;
+    text-align: center;
+    width: 60%;
+    left: 20%;
+    font-weight: 500;
+    top: 72%;
+    position: absolute;
+}
+div #choose1 a:hover, div #choose2 a:hover{
+	color: #fff;
+	background: #5FE42C;
+	text-decoration: none;
+}

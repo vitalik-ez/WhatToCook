@@ -1,0 +1,29 @@
+#subscribe{
+	width: 90%;
+	margin: 10px auto 85px;
+}
+.wrapper{
+	border: 1px solid #C0C0C0;
+	margin: 20px 0;
+	padding: 0;
+}	
+.wrapper img{
+	margin: 20px;
+
+}
+h6{
+	font-size: 24px;
+	display: inline-block;
+}
+button{
+	margin: 0 auto;
+	text-align: center;
+	background: #5FE42C;
+	border: none;
+	padding: 5px 15px;
+	color: #fff;
+	font-size: 18px;
+}
+.wrapper p{
+	margin: 10px;
+}

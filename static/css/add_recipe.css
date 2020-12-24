@@ -1,0 +1,64 @@
+#add_recipe{
+	width: 90%;
+	margin: 10px auto 85px;
+}	
+.wrapper{
+	border: 1px solid #C0C0C0;
+	margin: 20px 0;
+	padding: 0;
+}
+.wrapper label{
+	margin-left: 15px;
+	margin-top: 10px;
+}
+.wrapper input{
+	width: 100%;
+	height: 60px;
+	border: none;
+	background: #c0c0c0;
+	padding: 5px;
+}
+.wrapper #prod{
+	margin-left: 15px;
+	width: 50%;
+	height: 100%;
+}
+.wrapper #prod_num{
+	width: 20%;
+	height: 100%;
+}
+.wrapper hr{
+	display: block;
+	margin: 0;
+	width: 100%;
+	border: 1px solid #c0c0c0;
+}
+.wrapper #recipe{
+	height: 150px;
+}
+.wrapper .add{
+	background: transparent;
+	border: none;
+    width: 40%;
+    padding: 0;
+    margin: 15px 0;
+}
+.wrapper .add img{
+	width: 20%;
+	margin: 0;
+}
+.card_prod{
+	flex: 0 0 70%;
+	background: rgba(192, 192, 192, 0.7);
+	text-align: center;
+	padding: 10px;
+}
+button{
+	margin: 0 auto;
+	text-align: center;
+	background: #5FE42C;
+	border: none;
+	padding: 5px 15px;
+	color: #fff;
+	font-size: 18px;
+}

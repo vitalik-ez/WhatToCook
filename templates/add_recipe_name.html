@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/header_footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/recipe_name.css' %}">
+	<title>Recipe</title>
+
+</head>
+<body>
+
+	{% include "menu.html" %}
+	{% include "header.html" %}
+
+	<div class="container" id="recipe_name">
+		<div class="row">
+			<div class="col-12">
+				<img src="{% static recipe.0.photo %}" alt="">
+			</div>
+			<div class="col-12">
+				<h5>{{ recipe.0.name }}</h5>
+				<p>{{ recipe.0.summary }} </p>
+			</div>
+			<div class="col-12">
+				<p>Інгредієнти:</p>
+				<table>
+					{% for i in product_amount %}
+					<tr>
+						<th>{{ i.name }}</th>
+						<th>{{ i.count }} {{ i.measurement }}</th>
+					</tr>
+					{% endfor %}
+				</table>
+				<p>
+					<br>
+					<h5>Як приготовити?</h5>
+					{% for i in recipe.0.description  %}
+						<p>{{ i }}</p>
+					{% endfor %}
+				</p>
+
+			</div>
+
+		
+		</div>
+	</div>
+
+
+	{% include "bottom_menu.html" %}
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+#settings{
+	width: 90%;
+	margin: 10px auto 85px;
+}	
+.wrapper{
+	border: 1px solid #C0C0C0;
+	margin: 20px 0;
+	padding: 0;
+}
+.wrapper label{
+	margin-left: 15px;
+	margin-top: 10px;
+}
+.wrapper input{
+	width: 100%;
+	border: none;
+	background: #c0c0c0;
+	padding: 5px;
+}
+.wrapper hr{
+	display: block;
+	margin: 0;
+	width: 100%;
+	border: 1px solid #c0c0c0;
+}
+button{
+	margin: 0 auto;
+	text-align: center;
+	background: #5FE42C;
+	border: none;
+	padding: 5px 15px;
+	color: #fff;
+	font-size: 18px;
+}

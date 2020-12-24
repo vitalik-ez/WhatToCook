@@ -1,0 +1,113 @@
+body{
+	overflow-x: hidden;
+	color: #1F1E1E;
+	padding-top: 85px; 
+}
+h3{
+	text-align: center;
+    margin: 0 auto 15px;
+    font-size: 20px;
+}
+h5{
+	text-align: center;
+    margin: 0 auto;
+    font-size: 18px;
+}
+#header{
+	overflow: hidden;
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	display: block;
+	z-index: 10;
+}
+#header button{
+	background: transparent;
+	border: none;
+}
+#header button img{
+	margin: 0;
+	width: 100%;
+}
+img{
+	width: 30%;    
+	margin: 15px 15px 15px 70px;
+}
+#nav_footer{
+	width: 375px;
+	height: 75px;
+	background: #5FE42C;
+	position: fixed;
+	bottom: 0;
+}
+#nav_footer img{
+	height: 45px;
+    width: 100%;
+    margin: 15px 10px;
+}
+#nav_footer a{
+	display: inline-block;
+	width: 30%;
+}
+hr{
+	border: 1px solid #fff;
+	display: inline;
+}
+.wrap{
+    width: 100%;
+    z-index: 15;
+}
+#closebar{
+	border: none;
+	background: transparent;
+	padding: 0;
+	position: absolute;
+    top: 15px;
+    left: 80%;
+}
+#closebar img{
+	margin: 0;
+	width: 100%;
+}
+#sidebar {
+    background: #fff;
+    color: #1e1e1e;
+    transition: all 0.3s;
+    width: 250px;
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    transition: all 0.3s;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    margin: 30px 0 170px;
+}
+
+#sidebar ul p {
+    padding: 10px;
+}
+#sidebar ul li a {
+	color: #1e1e1e;
+    padding: 10px 20px 20px 30px;
+    font-size: 1.1em;
+    display: block;
+}
+a[data-toggle="collapse"] {
+    position: relative;
+}
+.politics{
+	/*margin: 0 30px;*/
+	bottom: 50px;
+	position: absolute;
+	color: #1e1e1e;
+	left: 30px;
+}
+a:hover{
+	color: #1e1e1e;
+}

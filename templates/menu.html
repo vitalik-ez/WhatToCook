@@ -1,0 +1,35 @@
+{% load static %}
+<div class="wrap">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <button type="button" id="closebar">
+            	<img src="{% static 'images/close.png' %}" alt="">
+            </button>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <a href="{% url 'profile' %}">Мій профіль</a>
+            </li>
+            <li>
+                <a href="{% url 'subscribe' %}">Баланс та підписка</a>
+            </li>
+            <li>
+                <a href="{% url 'favorite_recipes' %}">Улюблені рецепти</a>
+            </li>
+            <li>
+                <a href="{% url 'my_recipes' %}">Мої рецепти</a>
+            </li>
+            <li>
+                <a href="{% url 'settings' %}">Налаштування</a>
+            </li>
+            <li>
+                <a href="{% url 'login' %}">Вийти</a>
+            </li>
+            
+        </ul>
+        <a href="{% url 'privacy' %}" class="politics">Політика конфідеційності</a>
+        
+    </nav>
+</div>

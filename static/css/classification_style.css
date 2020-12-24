@@ -1,0 +1,33 @@
+#recipe_choose_body{
+    width: 90%;
+    height: 100%;
+    margin: 10px auto 85px;
+}
+#class1, #class2, #class3, #class4,
+#class5, #class6, #class7, #class8{
+	height: 145px;
+    width: 145px;
+	margin: 15px 0;
+}
+
+#class1 a, #class2 a, #class3 a, #class4 a,
+#class5 a, #class6 a, #class7 a, #class8 a{
+	color: #1E1E1E; 
+    background: #5FE42C;
+    padding:5px 10px;
+    width: 90px;
+    text-align: center;
+    font-weight: 500;
+    position: absolute;
+    left: 30%;
+    top: 40%;
+}
+div #class1 a:hover, div #class2 a:hover,
+div #class3 a:hover, div #class4 a:hover,
+div #class5 a:hover, div #class6 a:hover,
+div #class7 a:hover, div #class8 a:hover{
+    color: #fff;
+    background: #5FE42C;
+    padding:5px 10px;
+    text-decoration: none;
+}

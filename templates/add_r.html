@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %} ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/header_footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/add_recipe.css' %} ">
+	<title>Recipe</title>
+</head>
+<body>
+	{% include "menu.html" %}
+    {% include "header.html" %}
+
+    <div class="container" id="add_recipe">
+        <div class="row">
+            <div class="col-12">
+                <h5>Додати рецепт</h5>
+            </div>
+            <div class="col-12 wrapper">
+                <form action="" enctype="multipart/form-data" method="POST">
+                    {% csrf_token %}
+                    <label for="">Назва:</label><br>
+                    <input type="text" name="name_recipe" required><br>
+                    <label for="">Опис (не обов’язково):</label><br>
+                    <textarea  name="description" type="text" style="width: 100%; height: 60px;"></textarea>
+                    <select class="form-control" id="exampleFormControlSelect1" name="category_id">
+                      <option value="1">Салати</option>
+                      <option value="2">Закуски</option>
+                      <option value="3">М'ясо</option>
+                      <option value="4">Риба</option>
+                      <option value="5">Гарніри</option>
+                      <option value="6">Супи</option>
+                      <option value="7">Овочі</option>
+                      <option value="8">Інше</option>
+                    </select>
+                    <!--<label for="">Інгредієнти:</label><br>
+                    <input id="prod" type="text" name="product" required>
+                    <input id="prod_num" type="text" required>
+                    <select name="" size="1" multiple form="">
+                        <option>кг</option>
+                        <option>грам</option>
+                        <option>мл</option>
+                        <option>л</option>
+                    </select><br>
+                    <button class="add"><img src="{% static 'images/add.png' %}" alt=""></button>
+                    <hr>-->
+                    <label for="">Рецепт:</label><br>
+                    <textarea  name="recipe" type="text" style="width: 100%; height: 60px;"></textarea>
+                    {{ recipe_form.as_p  }}
+                    <button type="submit">
+                        Обрати інгредієнти
+                    </button>
+                </form>
+                
+            </div>
+        </div>
+    </div>    
+
+
+    {% include "bottom_menu.html" %}
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    
+
+</body>
+</html>

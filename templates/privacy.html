@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/header_footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/subscribe.css' %}">
+	<title>Recipe</title>
+</head>
+<body>
+	{% include "menu.html" %}
+    {% include "header.html" %}
+
+    <div class="container" id="subscribe">
+        <div class="row">
+            <div class="col-12">
+                <h5>Політика конфідеційності</h5>
+            </div>
+            <div class="col-12 wrapper">
+                <p>З метою підвищення якості обслуговування та безпеки зберігання даних наших користувачів, інформуємо вас про те, які саме дані ми збираємо і яким чином їх використовуємо у нашому додатку WhatToCook. Ми з повагою ставимось до конфіденційної інформації будь-якої особи, яка відвідує наш сайт, тому на підставі вимог чинного законодавства України та регламенту Європейського парламенту і ради нами була підготовлена дана Політика конфіденційності (далі – Політика).
+                <br><br>
+                Ця Політика не поширюється на сайти, перехід на які здійснюється за допомогою гіперпосилань, розміщених на нашому сайті.
+                <br><br>
+                Повідомляємо, що ми застосовуємо файли сookie. Із кожним вашим відвідуванням нашого сайту ми можемо збирати інформацію, що стосується пристроїв, які ви використовуєте, та мереж, до яких ви приєднуєтесь, коли користуєтеся нашими сервісами. Це може включати таку інформацію, як: IP-адреса, інформація для входу в обліковий запис, тип браузера та версія, тип та вид плагінів браузера, операційна система та платформа, інформація про ваші відвідування, у тому числі, маршрут переміщення за URL-адресами на, через чи з нашого сайту, продукти, які ви переглядали або шукали, помилки завантаження, довжина відвідування певних сторінок тощо. Ми збираємо таку інформацію шляхом використання різних технологій, у тому числі, cookie. Файли сookie – це невеликі блоки даних, які розміщуються на тимчасове зберігання на жорсткий диск вашого комп’ютера або у мобільний пристрій для того, щоб ви могли більш ефективно користуватися нашим сайтом. Якщо ви надаєте згоду, то це дозволяє нам використовувати файли cookie кожного разу, коли ви користуєтесь нашим сайтом.
+            </p>
+                
+            </div>
+        </div>
+    </div>    
+
+
+    {% include "bottom_menu.html" %}
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    
+</body>
+</html>

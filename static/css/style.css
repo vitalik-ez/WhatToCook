@@ -1,0 +1,50 @@
+@font-face {
+  font-family: Raleway;
+  src: url(font/Raleway.woff);
+}
+body{
+	margin: 50px 0;
+}
+img{
+	width: 100%;
+}
+input[type=text], input[type=password]{
+	border: none;
+	color: #5FE42C;
+	width: 100%;
+	margin: 15px 0;
+	text-align: center;
+	font-size: 16px;
+	border-bottom: 2px solid #1F1E1E;
+}
+button{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	background: #5FE42C;
+	border: none;
+	border-radius: 50px;
+	padding: 15px;
+	color: #fff;
+	font-size: 18px;
+}
+input[type=checkbox]{
+	margin: 10px;
+}
+label{
+	width: 70%;
+	margin: 20px 40px;
+}
+p{
+	font-size: 14px;
+	text-align: center;
+	margin-top: 10px;
+}
+p a{
+	color: #000;
+	text-decoration: underline;
+}
+p a:hover{
+	color: #5FE42C;
+	text-decoration: underline;
+}

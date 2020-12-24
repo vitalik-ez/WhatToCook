@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/header_footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/recipe_list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/refrigirator.css' %}">
+    <!--Search -->
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
+
+
+	<title>Recipe</title>
+</head>
+<body>
+	{% include "menu.html" %}
+	{% include "header.html" %}
+
+	<div class="container" id="recipe_list">
+		<div class="row">
+			<div class="col-12">
+				<h3>Пошук продуктів</h3>
+			</div>
+			<div class="col-12 search">
+				<label><img src="{% static 'images/search.svg' %}" alt="Search"></label>
+				<input id='search_here' class="form-control mb-3" type="text" placeholder="Введіть назву продукта">
+
+				<div id="box">
+					{% for product in products %}
+			            <b>{{product.name}}<b><br>
+			        {% endfor %}
+				</div>
+			</div>			
+			
+		</div>
+		<div class="col-12 wrapper">
+			{% for product in result %}
+				<div class="row back">
+					<div class="col-12 card_prod">
+						<table>
+							<tr>
+								
+							<th>
+								<img src="{% static product.0.2 %}" alt="">
+							</th>
+							<th>
+							
+								<p>{{ product.0.1 }}</p>
+
+								<input type="text" name="count{{ product.1.0 }}" size="1" value="{{ product.1.2}}">
+								<input type="text" name="measurement{{ product.1.0 }}" size="1"  value="{{ product.1.3}}">
+
+								</th>
+							</tr>
+						</table>
+					</div>
+				</div>
+			{% endfor %}
+			<div class="row back">
+					<div class="card_prod">
+						<p>Зберегти</p>
+						<button id="add"><a href="{% url 'my_recipes' %}"><img style="width: 50px; height: 50px;" src="{% static 'images/diskette.svg' %}" alt=""></a></button>
+					</div>
+				</div>
+		</div>
+	</div>
+
+
+
+
+	{% include "bottom_menu.html" %}
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+
+    <!-- Search -->
+    <script>
+    	String.prototype.format = function () {
+			var i = 0, args = arguments;
+			return this.replace(/{}/g, function () {
+			return typeof args[i] != 'undefined' ? args[i++] : '';
+			});
+		};
+
+		const data = '{{search_products}}'
+		console.log(data)
+
+		console.log(data)
+
+	    const rdata = JSON.parse(data.replace(/&quot;/g, '"'))
+	    console.log(rdata)
+
+	    const input = document.getElementById('search_here')
+	    
+	    let filteredArr = []
+
+	    input.addEventListener('keyup', (e)=>{
+	        box.innerHTML = ""
+	        filteredArr = rdata.filter(info=> info['name'].includes(e.target.value))
+	        console.log(filteredArr)
+
+	        if (filteredArr.length > 0){
+	            filteredArr.map(info=>{
+	                box.innerHTML += "<a style=\u0022color: black\u0022 href=\u0022add_new_product_recipe/{}\u0022>{}</a><br>".format(info['id'], info['name']);
+	            })
+	        } else {
+	            box.innerHTML = "<b>Такого продукту немає...</b>"
+	        }
+	    })
+  </script>
+
+    <!-- Search -->
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+</body>
+</html>

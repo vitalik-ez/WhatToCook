@@ -1,0 +1,66 @@
+#refrigirator{
+	width: 90%;
+	margin: 10px auto 85px;
+}
+.wrapper{
+	background: rgba(192, 192, 192, 0.7);
+	color: #1F1E1E;
+	padding: 15px; 
+}
+.wrapper h5{
+	margin: 0 0 10px;
+}
+.back{
+	background-image: url('../images/back_ref.png');
+	background-size: cover;
+}
+.card_prod{
+	flex: 0 0 90%;
+	background: rgba(192, 192, 192, 0.7);
+	margin: 10px 10px 5px 15px;
+	text-align: center;
+	padding: 10px;
+	font-weight: 500;
+}
+.card_prod img{
+	margin: 0;
+	width: 60%;
+}
+.card_prod p{
+	margin-bottom: 5px;
+}
+button{
+	margin: 0 auto;
+	text-align: center;
+	background: #5FE42C;
+	border: none;
+	padding: 5px 15px;
+	color: #fff;
+	font-size: 18px;
+}
+.card_prod .close{
+	border: none;
+	background: transparent;
+	padding: 0;
+	position: absolute;
+    top: 0;
+    right: 5px;
+}
+.card_prod #add{
+	background: transparent;
+	border: none;
+    padding: 0 20px;
+    margin: 10px auto;
+    text-align: center;
+}
+#add img{
+	width: 100%;
+}
+.card_prod input{
+	width: 45%;
+	border: 1px solid #C0c0c0;
+}
+th{
+	width: 50%;
+}
+

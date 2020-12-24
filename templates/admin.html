@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/header_footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+	<title>Admin</title>
+</head>
+<body>
+	{% include "menu.html" %}
+    {% include "header.html" %}
+    {{ message }}
+
+    <div class="container" id="admin">
+        <div class="row">
+            <div class="col-12">
+                <h5>Панель адміністратора</h5>
+            </div>
+            <div class="col-12 wrapper">
+                <h6>{{ rights.0 }}: {{ user.0 }}</h6><br>
+                <p>Email: {{ user.1 }}</p><br>
+                <hr>
+                {% if try and success %}
+                    <p>Добавлено успішно!</p>
+                {% elif try and not success %}
+                     <p>Виникла помилка</p>
+                {% endif %}
+
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <label for="">Email/логін</label>
+                    <input type="text" name="admin">
+                    <button type="submit">Додати нового адміна</button>
+                </form>
+                <hr>
+                <p>Переглянути список рецептів, запропонованих користувачами</p>
+                <button><a href="{% url 'admin_list' %}" style="color: white; text-decoration: none;">Рецепти</a></button>
+            </div>
+        </div>
+    </div>    
+
+
+    {% include "bottom_menu.html" %}
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
