@@ -47,21 +47,14 @@ jupyter-client==6.1.7
 jupyter-core==4.6.3
 jupyterlab-pygments==0.1.2
 kaleido==0.0.3.post1
-Kivy==2.0.0
-kivy-deps.angle==0.3.0
-kivy-deps.glew==0.3.0
-kivy-deps.gstreamer==0.1.18
-kivy-deps.sdl2==0.3.1
-Kivy-Garden==0.1.4
-kivymd @ file:///C:/Users/Vitaliy/Documents/GitHub/newKivyMD/KivyMD
-kiwisolver==1.1.0
+
 MarkupSafe==1.1.1
 matplotlib==3.1.3
 mistune==0.8.4
 mpmath==1.1.0
 multidict==4.7.4
 mysql-connector-python==8.0.22
-mysqlclient @ file:///C:/Users/Vitaliy/Documents/GitHub/Coursework_DataBase_MySql/mysqlclient-1.4.6-cp38-cp38-win32.whl
+mysqlclient==2.0.2
 nashpy==0.0.19
 nbclient==0.5.0
 nbconvert==6.0.6
